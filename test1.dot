@@ -1,0 +1,41 @@
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 [style=invis]
+                a2 -> a3
+                a1 [style=invis];
+                
+		label = "XRD";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "Monitor";
+		color=blue
+	}
+
+	subgraph cluster_2 {
+		node [style=filled];
+		c0 -> c1 -> c2 -> c3;
+		label = "Absorption";
+		color=blue
+	}
+
+	subgraph cluster_3 {
+		node [style=filled];
+		d0 -> d1 -> d2 -> d3;
+		label = "XRF";
+		color=blue
+	}
+
+        a1 [style=invis];
+
+	a0 -> b1;
+	b2 -> a3;
+      
+
+}
