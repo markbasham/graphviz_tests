@@ -1,13 +1,23 @@
 digraph G {
 
+	subgraph cluster_start {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+                z0 -> z1 -> z2 -> z3 -> z4 -> z5 -> z6 -> z7 [style=invis]         
+		label = "Plugins";
+	}
+
 	subgraph cluster_0 {
 		style=filled;
 		color=lightgrey;
 		node [style=filled,color=white];
-		a0 -> a1 -> a2 [style=invis]
-                a2 -> a3
-                a1 [style=invis];
-                
+                a0 -> a1 -> a2 -> a3
+		a3 -> a4 -> a5 -> a6 [style=invis]
+                a6 -> a7
+                a4 [style=invis];
+                a5 [style=invis];
+                a3 -> a6                
 		label = "XRD";
 	}
 
@@ -32,10 +42,19 @@ digraph G {
 		color=blue
 	}
 
-        a1 [style=invis];
+        z0 [label="Loader"]
+        z1 [label="Monitor Correction"]
+        z2 [label="Azimuthal Integration"]
+        z3 [label="Background Subtraction"]
+        z4 [label="Fitting"]
+        z5 [label="Absorption Correction"]
+        z6 [label="Tomography Reconstruction"]
+        z7 [label="Cluster Anlaysis"]
 
-	a0 -> b1;
-	b2 -> a3;
+        b0 [label="Loader"]
+        c0 [label="Loader"]
+        d0 [label="Loader"]
+
       
 
 }
